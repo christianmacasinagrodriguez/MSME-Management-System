@@ -1,0 +1,214 @@
+.container-manage {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+
+    
+}
+
+.div-manage-left {
+    position: relative;
+    background-color: black;
+    top: 70px;
+    height: 500px;
+    width: 400px;
+    left: 50px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+    
+}
+.div-left-top-buttons {
+    display: flex;
+    justify-content: right;
+    flex-direction: row;
+    height: 50px;
+    background-color: black;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+
+    
+    
+}
+.div-manage-right {
+    display: flex;
+    justify-content: flex-start;
+    background-color: blue;
+    top: 70px;
+    height: 700px;
+    width: calc(100vw - 550px);
+    right: 50px;
+    position: fixed;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.div-manage-right::-webkit-scrollbar {
+    width: 10px;
+}
+.div-manage-right::-webkit-scrollbar-track {
+    background: yellow;
+    border-radius: 5px;
+}
+.div-manage-right::-webkit-scrollbar-thumb {
+    background: green;
+    border-radius: 5px;
+}
+.top-button-delete {
+    background-color: red;
+    color: white;
+    width: 100px;
+    transition: opacity, 0.5s;
+
+}
+.top-button-edit {
+    background-color: blue;
+    color: white;
+    width: 100px;
+    transition: opacity, 0.5s;
+
+
+}
+.top-button-add {
+    background-color: green;
+    color: white;
+    width: 100px;
+    transition: opacity, 0.5s;
+
+}
+.top-button-add:hover, .top-button-edit:hover, .top-button-delete:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+.top-button-add:active, .top-button-edit:active, .top-button-delete:active {
+    opacity: 0.5;
+}
+.form-left {
+    padding-top: 0;
+    margin: 0;
+    
+}
+.form-input-item-name, .form-input-item-price, .form-input-item-imageURL, .form-input-item-quantity, .form-input-item-id {
+    text-align: center;
+    height: 25px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.form-input-item-inStock {
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.form-input-item-id {
+    margin-top: 20px;
+
+}
+.form-input-item-id, 
+.form-input-item-inStock {
+    visibility: hidden;
+}
+.form-input-item-button {
+    margin-top: 50px;
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 300px;
+    border-radius: 30px;
+    transition: opacity, 0.5s;
+}
+.form-input-item-button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+.form-input-item-button:active {
+    opacity: 0.5;
+}
+
+.manage-table {
+    table-layout: fixed;
+    width: 100%;
+}
+th {
+    color: greenyellow;
+}
+th, td {
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+th::-webkit-scrollbar-track, td::-webkit-scrollbar-track {
+    width: 5px;
+    background: yellow;
+    border-radius: 2px;
+}
+th::-webkit-scrollbar-thumb, td::-webkit-scrollbar-thumb {
+    width: 5px;
+    background: green;
+    border-radius: 2px;
+}
+th::-webkit-scrollbar, td::-webkit-scrollbar {
+    height: 5px;
+}
+
+.div-message {
+    margin-top: 50px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 100px;
+    width: 100vw;
+    border-radius: 5px;
+
+}
+
+@media (min-width: 400px) and (max-width: 1200px) {
+    .container-manage {
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+    .div-manage-left {
+        position: relative;
+        background-color: black;
+        top: 70px;
+        height: 500px;
+        width: 100vw;
+        left: 50%;
+        top: 50%;
+        margin-bottom: 100px;
+        transform: translate(-50%, -50%);
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        
+        
+        
+    }
+    .div-manage-right {
+        display: flex;
+        justify-content: flex-start;
+        background-color: blue;
+        top: 70px;
+        height: 700px;
+        width: 100vw;
+        right: 0;
+        left: 0;
+        position: relative;
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin-bottom: 50px;
+    }
+    .container-manage {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+

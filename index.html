@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles/login.css">
+    <script defer src="scripts/login.js"></script>
+</head>
+
+<body>
+    <div class="div-login-main">
+        <div>
+            <button onclick="Toggle(2)" id="button-back">BACK</button>
+        </div>
+        <div class="div-message" id="div_message" style="height: 100px;">
+            <h3 class="h3-message" id="h3_message">message</h3>
+        </div>
+        <div></div>
+        <div></div>
+        <div class="div-login-form">
+            
+            <form class="form-login-lform" id="form_login_lform" align="center">
+                <input placeholder="USERNAME" style="text-align: center; border: none; color: green; height: 30px; border-radius: 5px; margin-top: 5px;" type="text" id="input_login_username" class="input-login-username"><br>
+                <input placeholder="PASSWORD" style="text-align: center; border: none; color: green; height: 30px; border-radius: 5px; margin-top: 5px;" type="password" id="input_login_password" class="input-login-password"><br>
+                <input type="checkbox" onclick="ShowPassword('input_login_password')">Show Password</input> <br>
+                
+                <div style="margin-top: 10px;"><p1><a href="#" onclick="Toggle(0)">Forgot Password</a></p1></div>
+                <div style="margin-top: 10px;"><p1>No account yet?<span><a onclick="Toggle(1)" href="#">Signup</a></span></p1></div> <br>
+                <input type="reset" id="input_login_loginButton" class="input-login-loginButton" value="LOGIN">
+                <!-- <fildset>
+                <legend>Login</legend>
+                    <input placeholder="USERNAME" style="text-align: center; border: none; color: green; height: 30px; border-radius: 5px; margin-top: 5px;" type="text" id="input_login_username" class="input-login-username"><br>
+                    <input placeholder="PASSWORD" style="text-align: center; border: none; color: green; height: 30px; border-radius: 5px; margin-top: 5px;" type="password" id="input_login_password" class="input-login-password"><br>
+                    <input type="checkbox" onclick="ShowPassword('input_login_password')">Show Password</input> <br>
+                    
+                    <div style="margin-top: 10px;"><p1><a href="#" onclick="Toggle(0)">Forgot Password</a></p1></div>
+                    <div style="margin-top: 10px;"><p1>No account yet?<span><a onclick="Toggle(1)" href="#">Signup</a></span></p1></div> <br>
+
+                    <input type="reset" id="input_login_loginButton" class="input-login-loginButton" value="LOGIN">
+
+                </fieldset> -->
+                
+
+            </form>
+            <form class="form-login-sform" id="form_login_sform" align="center">
+                <input placeholder="PREFERRED USERNAME" style="text-align: center; border: none; color: green; height: 30px; border-radius: 5px; margin-top: 5px;" type="text" id="input_signup_username" class="input-signup-username"><br>
+                <input placeholder="FIRST NAME" style="text-align: center; border: none; color: green; height: 30px; border-radius: 5px; margin-top: 5px;" type="text" id="input_signup_firstname" class="input-signup-firstname"><br>
+                <input placeholder="LAST NAME" style="text-align: center; border: none; color: green; height: 30px; border-radius: 5px; margin-top: 5px;" type="text" id="input_signup_lastname" class="input-signup-lastname"><br>
+                <input placeholder="SET PASSWORD" style="text-align: center; border: none; color: green; height: 30px; border-radius: 5px; margin-top: 5px;" type="password" id="input_signup_password" class="input-signup-password"><br>
+                <input type="checkbox" onclick="ShowPassword('input_signup_password')">Show Password</input> <br>
+                <input placeholder="CONFIRM PASSWORD" style="text-align: center; border: none; color: green; height: 30px; border-radius: 5px; margin-top: 5px;" type="password" id="input_signup_confirmPassword" class="input-signup-confirmPassword"><br>
+                <input type="checkbox" onclick="ShowPassword('input_signup_confirmPassword')">Show Password</input> <br>
+                <input placeholder="MOBILE NUMBER" style="text-align: center; border: none; color: green; height: 30px; border-radius: 5px; margin-top: 5px;" type="tel" id="input_signup_mobileNumber" class="input-signup-mobileNumber"><br>
+
+                <div style="margin-top: 10px; margin-bottom: 5px ">Security Question:</div><br>
+                <select style="width: 150px; height: 30px;" id="signup_security_questions"><br>
+                    <option selected disabled>Choose One</option>
+                    <option>What is your favorite color?</option>
+                    <option>What is the name of your first pet?</option>
+                    <option>What is your mother's maiden name?</option>
+                    <option>What was your first car?</option>
+                    <option>What elementary school did you attend?</option>
+                    <option>What is the name of the town where you were born?</option>
+                    <option>What is the name of your childhood bestfriend?</option>
+                </select><br>
+                <input style="text-align: center; border: none; color: green; height: 30px; border-radius: 5px; margin-top: 5px;" type="text" id="input_signup_createSecurityAnswer" class="input-signup-createSecurityAnswer"><br>
+                <div style="margin-top: 30px;"><p1>Already has an account?<span><a onclick="Toggle(2)" href="#">Login</a></span></p1></div> <br>
+
+                <input type="button" id="input_signup_signupButton" class="input-signup-signupButton" value="SIGNUP">
+
+            </form>
+            <form class="form-login-forgotform" id="form_login_forgotpassform" align="center">
+                <input placeholder="USERNAME or MOBILE #" style="text-align: center; border: none; color: green; height: 30px; border-radius: 5px; margin-top: 5px;" type="text" id="input_forgotPassword_username" class="input-forgotPassword-username"><br>
+                <div style="display: none;" id="div-createNewPassword1">
+                    <div style="margin-top: 10px; margin-bottom: 5px ">Security Question:</div><br>
+                    <select style="width: 150px; height: 30px;" id="forgot_security_questions"><br>
+                        <option selected disabled>Choose One</option>
+                        <option>What is your favorite color?</option>
+                        <option>What is the name of your first pet?</option>
+                        <option>What is your mother's maiden name?</option>
+                        <option>What was your first car?</option>
+                        <option>What elementary school did you attend?</option>
+                        <option>What is the name of the town where you were born?</option>
+                        <option>What is the name of your childhood bestfriend?</option>
+                    </select><br>
+                    <input placeholder="YOUR ANSWER" style="text-align: center; border: none; color: green; height: 30px; border-radius: 5px; margin-top: 5px;" type="text" id="input_forgot_securityAnswer" class="input-forgot-securityAnswer"><br>
+                </div>
+                <div style="display: none;" id="div-createNewPassword2">
+                    <div style="margin-top: 10px;">
+                        <input placeholder="CREATE NEW PASSWORD" style="text-align: center; border: none; color: green; height: 30px; border-radius: 5px; margin-top: 5px;" type="password" id="input_newPassword"> <br>
+                        <input type="checkbox" onclick="ShowPassword('input_newPassword')">Show Password</input> <br>
+                        <input placeholder="CONFIRM PASSWORD" style="text-align: center; border: none; color: green; height: 30px; border-radius: 5px; margin-top: 5px;" type="password" id="input_confirmNewPassword"><br>
+                        <input type="checkbox" onclick="ShowPassword('input_confirmNewPassword')">Show Password</input><br>
+                        <div style="margin-top: 30px;"><p1>Already remembered your password?<span><a onclick="Toggle(3)" href="#"> Login</a></span></p1>
+                    </div> <br>
+    
+                    <input type="button" id="input_forgotPassword_forgotButton" class="input-forgotPassword-forgotButton" value="SAVE">
+   
+                </div><br>
+    
+                    
+                    
+                
+
+            </form>
+
+        </div>
+        <div></div>
+    </div>
+
+    
+     
+    
+</body>
+</html>

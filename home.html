@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/manage.css">
+    <link rel="stylesheet" href="styles/media.css">
+
+    <!-- "defer" enables the script to be added on the head tag and it runs the page faster. It is like DOMContentLoaded -->
+
+    <script defer src="scripts/home.js"></script>
+    <script defer src="scripts/manage.js"></script>
+    <script defer src="scripts/media.js"></script>
+
+</head>
+<body>
+    <div class="div-top" id="div_top">
+        <div style="display: flex; justify-content: center;">
+            <div style="color: white;" class="div-time" id="div_time"></div>
+        </div>
+        <div>
+            <div class="div-search" id="div_search">
+                <input class="input-search" id="input_search" type="search" placeholder="Search Here" autocomplete="true" onkeyup="GroupSearch()">
+                <div class="div-search-items" id="div_search_items">
+                    
+                </div>
+            </div>
+
+        </div>
+        <div class="div-top-right">
+            <button class="button-home" id="button_home" onclick="TopButtons(3)">HOME</button>
+            <button class="button-manage" id="button_manage" onclick="TopButtons(2)">MANAGE</button>
+            <button class="button-media" id="button_media" onclick="TopButtons(1)">MEDIA</button>
+            <button class="button-logout" onclick="TopButtons(0)">LOGOUT</button>
+        </div>
+    </div>
+    
+    <div class="container-home" id="container_home">
+        <div></div>
+        <div id="div_main" class="div-main"></div>
+        <div class="div-right">
+            <div class="div-cart"><h1>CART</h1></div>
+            <div class="div-cart-item">
+                <div class="cart-item-name" ><span style="color: yellow; margin-left: 10px;"><strong>PURCHASED ITEM</strong></span></div>
+                <div class="cart-item-quantity" ><span style="color: yellow;"><strong>QTY.</strong></span></div>
+                <div class="cart-item-price" ><span><strong style="color: yellow;">TOTAL</strong></span></div>
+            </div>
+            
+            <div class="div-cart-items">
+                <div class="cart-item-name" id="cart_item_name"></div>
+                <div class="cart-item-quantity" id="cart_item_quantity"><span style="color: yellow;"><strong></strong></span></div>
+                <div class="cart-item-price" id="cart_item_price"><span><strong style="color: yellow;"></strong></span></div>
+            </div>
+            <div class="div-cart-checkout">
+                <div class="div-cart-amountDue">
+                    <h3 style="color: white; display: flex; justify-content: right;">AMOUNT DUE:</h3>
+                    <h3 style="color: green; display: flex; justify-content: center;" id="amount_due">₱000</h3>
+                    
+                </div>
+                <div class="div-cart-change">
+                    <h3 style="color: white; display: flex; justify-content: right;">CHANGE:</h3>
+                    <h3 style="color: red; display: flex; justify-content: center;" id="change">₱000</h3>
+                    
+                </div>
+                <div class="div-cart-payment">
+                    <h3 style="color: white; display: flex; justify-content: right;">PAYMENT:</h3>
+                    <input style="color: blue; text-align: center; height: 20px; display: flex; align-self: center;" type="number" id="input_payment" >
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-media" id="container_media">
+        
+        <div class="div-video-image-view">
+            
+            <div class="div-buttons">
+                <p1 id="p1_title"></p1><br>
+                <img class="image-view" id="image_view">
+                <video class="video-view" id="video_view" controls>
+
+                </video><br>
+                <button class="previous-button" id="previous_button">PREVIOUS</button>
+                <button class="next-button" id="next_button">NEXT</button>
+            </div>
+            
+            
+        </div>
+        <div class="div-left">
+            <div align="center" class="div-file" id="div_file">
+                <label class="label-input-file">
+                    <input  type="file" multiple class="input-file" id="input_file">
+                    CLICK TO ADD FILES
+                </label>
+                
+                
+            </div>
+            
+            <h3 style="color: yellow">VIDEOS</h1>
+            <div class="div-video" id="div_video"></div>
+            <h3 style="color: orangered;">AUDIO</h1>
+            <div class="div-music" id="div_music"></div>
+            <h3 style="color: green;">IMAGES</h1>
+            <div class="div-photo" id="div_photo"></div>
+
+        </div>
+        
+    </div>
+    <div class="container-manage" id="container_manage">
+        <div class="div-manage-left" id="div_manage_left">
+            <div class="div-left-top-buttons" id="div_left_top_buttons">
+                <input type="reset" class="top-button-add" id="top_button_add" onclick="AddButton()" value="ADD">
+                <input type="reset" class="top-button-edit" id="top_button_edit" onclick="EditButton()" value="EDIT">
+                <input type="reset" class="top-button-delete" id="top_button_delete" onclick="DeleteButton()" value="DELETE">
+            </div><br>
+            <div class="div-message" id="div_message">
+            </div>
+            <form class="form-left" id="form-left" align="center">
+                <input type="number" class="form-input-item-id" id="form_input_item_id" placeholder="Product ID"><br>
+                <input type="text" class="form-input-item-name" id="form_input_item_name" placeholder="Product Name"><br>
+                <input type="number" class="form-input-item-price" id="form_input_item_price" placeholder="Product Price"><br>
+                <input type="text" class="form-input-item-imageURL" id="form_input_item_imageURL" placeholder="Product Image URL"><br>
+                <input type="number" class="form-input-item-quantity" id="form_input_item_quantity" placeholder="Product Quantity"><br>
+                <input type="radio" class="form-input-item-inStock" id="form_input_item_inStock"><br>
+                <input type="button" class="form-input-item-button" id="form_input_item_button" onclick="CheckInputs()" value="ADD">
+                
+            </form>
+        </div>
+        
+        <div class="div-manage-right" id="div_manage_right">
+            <table class="manage-table" id="manage_table">
+                <tr class="manage-tableRow-head" id="manage_tableRow-head">
+                    <th class="manage-tableHead-headID" id="manage_tableHead_headID">PRODUCT ID</th>
+                    <th class="manage-tableHead-headName" id="manage_tableHead_headName">PRODUCT NAME</th>
+                    <th class="manage-tableHead-headImage" id="manage_tableHead_headImage">PRODUCT IMAGE</th>
+                    <th class="manage-tableHead-headPrice" id="manage_tableHead_headPrice">PRODUCT PRICE</th>
+                    <th class="manage-tableHead-headQuantity" id="manage_tableHead_headQuantity">PRODUCT QUANTITY</th>
+                    <th class="manage-tableHead-headStatus" id="manage_tableHead_headStatus">PRODUCT STATUS</th>
+
+                </tr>
+                <tr class="manage-tableRow-dataId" id="manage_tableRow_data">
+                    <td class="manage-tableHead-dataID" id="manage_tableHead_dataID"></td>
+                    <td class="manage-tableHead-dataName" id="manage_tableHead_dataName"></td>
+                    <td class="manage-tableHead-dataImage" id="manage_tableHead_dataImage"></td>
+                    <td class="manage-tableHead-dataPrice" id="manage_tableHead_dataPrice"></td>
+                    <td class="manage-tableHead-dataQuantity" id="manage_tableHead_dataQuantity"></td>
+                    <th class="manage-tableHead-dataStatus" id="manage_tableHead_dataStatus"></th>
+                </tr>
+                
+
+            </table>
+    
+
+        </div>
+
+    </div>
+    
+    
+    
+</body>
+</html>
