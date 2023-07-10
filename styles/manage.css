@@ -166,7 +166,7 @@ th::-webkit-scrollbar, td::-webkit-scrollbar {
     align-content: center;
     justify-content: center;
     height: 100px;
-    width: 100vw;
+    width: 100%;
     border-radius: 5px;
 
 }
