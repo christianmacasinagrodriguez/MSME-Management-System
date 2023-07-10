@@ -6,6 +6,19 @@ body {
     background-size: cover;
     
 }
+.overlay {
+    z-index: 200;
+    position: fixed;
+    display: none;
+    place-items: center;
+    background-color: black;
+    color: #fff;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    
+}
 
 .div-login-main {
     display: grid;
@@ -78,5 +91,10 @@ body {
     align-items: center;
     visibility: hidden;
     border-radius: 5px;
+}
+@media (max-width: 500px) {
+    .overlay {
+        display: grid;
+    }
 }
 
