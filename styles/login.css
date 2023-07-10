@@ -92,7 +92,7 @@ body {
     visibility: hidden;
     border-radius: 5px;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
     .overlay {
         display: grid;
     }
