@@ -109,5 +109,9 @@ a:link {
     .overlay {
         display: grid;
     }
+    body {
+        height: 100dvh;
+        overflow-x: hidden;
+    }
 }
 
