@@ -25,9 +25,13 @@ let Products = [
 let SearchItems = []
 let SearchMedias = []
 let SearchManage = []
+let cartItemCounter = 0
 
 const menuIcon = document.getElementById('menu-icon')
+const cartIcon = document.getElementById('cart-icon')
 const divTopRight = document.querySelector('.div-top-right')
+const divRight = document.querySelector('.div-right')
+const cartQuantity = document.querySelector('.cart-quantity')
 
 
 let f = new Intl.NumberFormat('en-us', {
@@ -74,12 +78,13 @@ function CreateBoxes(){
         let newBox = document.createElement('div')
         newBox.id = product.id
         newBox.tabIndex = '-1'
-        newBox.style.width = '17rem';
+        newBox.style.width = '14rem';
         newBox.style.height = '20rem';
         newBox.style.backgroundColor = 'var(--white-color)';
         newBox.style.borderRadius = '10px';
         newBox.style.border = 'none';
         newBox.style.boxShadow = '0 0 10px var(--dark-accent-color)'
+        newBox.style.padding = '1rem'
         newBox.className = 'div-smallBoxes';
         div_main.appendChild(newBox)
         CreateElements(product, newBox)
@@ -129,6 +134,10 @@ function CreateElements(item, view) {
 }
 
 function AddToCart(item) {
+    cartItemCounter += 1
+    cartQuantity.innerText = cartItemCounter
+
+
     
     let cart_item_name = document.getElementById('cart_item_name')
     let cart_item_quantity = document.getElementById('cart_item_quantity')
@@ -146,11 +155,6 @@ function AddToCart(item) {
     new_cart_item_name.style.marginLeft = '10px'
     new_cart_item_name.style.whiteSpace = 'nowrap'
     new_cart_item_name.style.marginBottom = '20px'
-
-    
-
-   
-    
 
     new_cart_item_quantity.innerText = 'x1'
     new_cart_item_quantity.style.marginTop = '5px'
@@ -457,7 +461,20 @@ function menuToggle() {
 
 }
 
+function toggleCart() {
+    if(divRight.style.display !== 'block') {
+        divRight.style.display = 'block'    
+    } else {
+        divRight.style.display = 'none'
+    }
+    console.log(cartIcon.innerText)
+    
+
+
+}
+
 menuIcon.addEventListener('click', menuToggle)
+cartIcon.addEventListener('click', toggleCart)
 
 
 // async function GetWeather(latitude, longitude){

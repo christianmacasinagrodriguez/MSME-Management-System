@@ -33,9 +33,11 @@
 
         </div>
         <div class="div-cart-icon">
-            <span class="material-symbols-outlined">
+            <span class="material-symbols-outlined cart-icon" id="cart-icon">
                 shopping_cart
-                </span>
+            </span>
+            <p class="cart-quantity">0</p>
+            
         </div>
         <div class="div-top-right">
             <button class="button-home" id="button_home" onclick="TopButtons(3)">HOME</button>
@@ -46,7 +48,8 @@
         <div class="div-menu">
             <span class="material-symbols-outlined" id="menu-icon">
                 menu
-                </span>
+            </span>
+
         </div>
     </div>
     
@@ -57,7 +60,7 @@
             <div class="div-cart"><h1>CART</h1></div>
             <div class="div-cart-item">
                 <div class="cart-item-name" ><span style="color: #031E15; margin-left: 10px;"><strong>PURCHASED ITEM</strong></span></div>
-                <div class="cart-item-quantity" ><span style="color: #031E15;"><strong>QTY.</strong></span></div>
+                <div class="cart-item-quantity;"  style="display: flex; justify-content: center;"><span style="color: #031E15;"><strong>QTY.</strong></span></div>
                 <div class="cart-item-price" ><span><strong style="color: #031E15;">TOTAL</strong></span></div>
             </div>
             
@@ -79,7 +82,7 @@
                 </div>
                 <div class="div-cart-payment">
                     <h3 style="color: white; display: flex; justify-content: right;">PAYMENT:</h3>
-                    <input style="color: blue; text-align: center; height: 20px; display: flex; align-self: center;" type="number" id="input_payment" >
+                    <input style="color: #031E15; text-align: center; height: 2rem; display: flex; align-self: center;" type="number" id="input_payment" >
                 </div>
             </div>
         </div>

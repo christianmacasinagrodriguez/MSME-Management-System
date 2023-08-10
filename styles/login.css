@@ -10,7 +10,7 @@
 }
 body {
     font-family: 'Poppins', sans-serif;
-    background-image: url(../assets/images/_0c215718-6429-4f26-b537-d5252a439e81.jfif);    
+    background-image: url(/loginbg.jfif);    
     height: fit-content;
     width: 100vw;
     background-repeat: no-repeat;
@@ -100,6 +100,9 @@ body {
 }
 
 a:visited {
+    color: var(--normal-accent-color);
+}
+a:link {
     color: var(--normal-accent-color);
 }
 @media (max-width: 800px) {
