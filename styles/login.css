@@ -1,6 +1,16 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --black-color: #000;
+    --white-clor: #fff;
+    --dark-accent-color: #031E15;
+    --light-accent-color: #2EEDAE;
+    --normal-accent-color: #10B981;
+}
 body {
-    background-image: url(login.jpg);    
-    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-image: url(../assets/images/_0c215718-6429-4f26-b537-d5252a439e81.jfif);    
+    height: fit-content;
     width: 100vw;
     background-repeat: no-repeat;
     background-size: cover;
@@ -19,70 +29,65 @@ body {
     bottom: 0;
     
 }
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 900,
+  'GRAD' 0,
+  'opsz' 48
+}
 
 .div-login-main {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
+    place-items: center;
 }
 .div-login-form {
     display: flex;
     justify-content: center;
+   
 }
 .form-login-sform, .form-login-forgotform {
     display: none;
 }
 .form-login-lform, .form-login-sform, .form-login-forgotform {
-    border: 1px solid rgb(0,100,0);
+   
     color: white;
-    background-color: rgba(2, 26, 4, 0.8);
+    background-color: rgba(3,30,21, 0.9);
+    box-shadow: 0 0 15px var(--light-accent-color);
     padding: 30px;
     border-radius: 10px;
 }
-.input-login-loginButton {
-    border: 1px solid navy;
-    padding: 10px;
+.input-login-loginButton, .input-forgotPassword-forgotButton, .input-signup-signupButton {
+    border: none;
+    padding: 10px 20px;
     margin-top: 20px;
-    border-radius: 4px;
+    border-radius: 5px;
     color: white;
-    background-color: blue;
-    transition: opacity, 1s;
+    background-color: var(--normal-accent-color);
+    transition: all, 0.5s;
     margin-bottom: 0px;
 }
-.input-signup-signupButton {
-    border: 1px solid blueviolet;
-    padding: 10px;
-    margin-top: 20px;
-    border-radius: 4px;
-    color: white;
-    background-color: violet;
-    transition: opacity, 1s;
 
-}
-.input-forgotPassword-forgotButton{
-    border: 1px solid maroon;
-    padding: 10px;
-    margin-top: 20px;
-    border-radius: 4px;
-    color: white;
-    background-color: red;
-    transition: opacity, 1s;
-}
 
-.input-login-loginButton:hover, .input-signup-signupButton:hover, .input-forgotPassword-forgotButton:hover, #button-back:hover {
-    opacity: 0.7;
+.input-login-loginButton:hover, .input-signup-signupButton:hover, .input-forgotPassword-forgotButton:hover {
+    background-color: var(--light-accent-color);
     cursor: pointer;
 }
 .input-login-loginButton:active, .input-signup-signupButton:active, .input-forgotPassword-forgotButton:active, #button-back:active {
-    opacity: 0.1;
+    opacity: 0.5;
 }
 
 #button-back {
-    background-color: red;
-    color: white;
-    padding: 20px;
-    border: 2px solid maroon;
+    margin-top: 5%;
+    background-color: transparent;
+    color: var(--normal-accent-color);
     transition: opacity, 1s;
+    font-size: 3rem;
     display: none;
+    cursor: pointer;
+}
+#button-back:hover {
+    color: var(--light-accent-color);
 }
 
 .div-message {
@@ -91,6 +96,10 @@ body {
     align-items: center;
     visibility: hidden;
     border-radius: 5px;
+}
+
+a:visited {
+    color: var(--normal-accent-color);
 }
 @media (max-width: 800px) {
     .overlay {
