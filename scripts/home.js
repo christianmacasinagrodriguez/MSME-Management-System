@@ -26,6 +26,9 @@ let SearchItems = []
 let SearchMedias = []
 let SearchManage = []
 
+const menuIcon = document.getElementById('menu-icon')
+const divTopRight = document.querySelector('.div-top-right')
+
 
 let f = new Intl.NumberFormat('en-us', {
     currency: 'PHP',
@@ -441,6 +444,20 @@ function RetrieveProducts() {
         
     }
 }
+
+function menuToggle() {
+    if(menuIcon.innerText === 'menu') {
+        menuIcon.innerText = 'close'
+        divTopRight.style.display = 'flex'
+    } else {
+        menuIcon.innerText = 'menu'
+        divTopRight.style.display = 'none'
+
+    }
+
+}
+
+menuIcon.addEventListener('click', menuToggle)
 
 
 // async function GetWeather(latitude, longitude){
