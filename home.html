@@ -18,11 +18,11 @@
 
 </head>
 <body>
-    <div class="overlay">Mobile is not yet supported. Please use your computer instead.</div>
+    <!-- <div class="overlay">Mobile is not yet supported. Please use your computer instead.</div> -->
     <div class="div-top" id="div_top">
-        <div style="display: flex; justify-content: center;">
-            <div style="color: white;" class="div-time" id="div_time"></div>
-        </div>
+        
+        <div style="color: white;" class="div-time" id="div_time"></div>
+        
         <div>
             <div class="div-search" id="div_search">
                 <input class="input-search" id="input_search" type="search" placeholder="Search Here" autocomplete="true" onkeyup="GroupSearch()">
@@ -32,11 +32,21 @@
             </div>
 
         </div>
+        <div class="div-cart-icon">
+            <span class="material-symbols-outlined">
+                shopping_cart
+                </span>
+        </div>
         <div class="div-top-right">
             <button class="button-home" id="button_home" onclick="TopButtons(3)">HOME</button>
             <button class="button-manage" id="button_manage" onclick="TopButtons(2)">MANAGE</button>
             <button class="button-media" id="button_media" onclick="TopButtons(1)">MEDIA</button>
             <button class="button-logout" onclick="TopButtons(0)">LOGOUT</button>
+        </div>
+        <div class="div-menu">
+            <span class="material-symbols-outlined">
+                menu
+                </span>
         </div>
     </div>
     
@@ -46,20 +56,20 @@
         <div class="div-right">
             <div class="div-cart"><h1>CART</h1></div>
             <div class="div-cart-item">
-                <div class="cart-item-name" ><span style="color: yellow; margin-left: 10px;"><strong>PURCHASED ITEM</strong></span></div>
-                <div class="cart-item-quantity" ><span style="color: yellow;"><strong>QTY.</strong></span></div>
-                <div class="cart-item-price" ><span><strong style="color: yellow;">TOTAL</strong></span></div>
+                <div class="cart-item-name" ><span style="color: #031E15; margin-left: 10px;"><strong>PURCHASED ITEM</strong></span></div>
+                <div class="cart-item-quantity" ><span style="color: #031E15;"><strong>QTY.</strong></span></div>
+                <div class="cart-item-price" ><span><strong style="color: #031E15;">TOTAL</strong></span></div>
             </div>
             
             <div class="div-cart-items">
                 <div class="cart-item-name" id="cart_item_name"></div>
-                <div class="cart-item-quantity" id="cart_item_quantity"><span style="color: yellow;"><strong></strong></span></div>
-                <div class="cart-item-price" id="cart_item_price"><span><strong style="color: yellow;"></strong></span></div>
+                <div class="cart-item-quantity" id="cart_item_quantity"><span style="color: #031E15;"><strong></strong></span></div>
+                <div class="cart-item-price" id="cart_item_price"><span><strong style="color: #031E15;"></strong></span></div>
             </div>
             <div class="div-cart-checkout">
                 <div class="div-cart-amountDue">
                     <h3 style="color: white; display: flex; justify-content: right;">AMOUNT DUE:</h3>
-                    <h3 style="color: green; display: flex; justify-content: center;" id="amount_due">₱000</h3>
+                    <h3 style="color: #10B981; display: flex; justify-content: center;" id="amount_due">₱000</h3>
                     
                 </div>
                 <div class="div-cart-change">

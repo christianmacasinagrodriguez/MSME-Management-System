@@ -71,11 +71,12 @@ function CreateBoxes(){
         let newBox = document.createElement('div')
         newBox.id = product.id
         newBox.tabIndex = '-1'
-        newBox.style.width = '250px';
-        newBox.style.height = '300px';
-        newBox.style.backgroundColor = 'black';
+        newBox.style.width = '17rem';
+        newBox.style.height = '20rem';
+        newBox.style.backgroundColor = 'var(--white-color)';
         newBox.style.borderRadius = '10px';
-        newBox.style.border = '2px solid green';
+        newBox.style.border = 'none';
+        newBox.style.boxShadow = '0 0 10px var(--dark-accent-color)'
         newBox.className = 'div-smallBoxes';
         div_main.appendChild(newBox)
         CreateElements(product, newBox)
@@ -92,14 +93,18 @@ function CreateElements(item, view) {
 
     if(item !== undefined) {
         imageView.src = item.imageURL
-        imageView.style.height = '200px';
-        imageView.style.width = '250px';
+        imageView.style.height = '12.5rem';
+        imageView.style.width = '100%';
         imageView.style.borderRadius = '10px'
         imageView.style.backgroundColor = 'white'
+        imageView.style.objectFit = 'contain'
+        imageView.style.borderBottom = '1px solid var(--dark-accent-color)'
+        imageView.style.marginTop = '0.5rem'
+
 
         productNameDIV.innerText = item.name;
         productNameDIV.style.marginTop = '20px';
-        productNameDIV.style.color = 'white';
+        productNameDIV.style.color = 'var(--normal-accent-color)';
         productNameDIV.style.display = 'flex';
         productNameDIV.style.justifyContent = 'center';
 

@@ -2,10 +2,11 @@
 
 :root {
     --black-color: #000;
-    --white-clor: #fff;
+    --white-color: #fff;
     --dark-accent-color: #031E15;
     --light-accent-color: #2EEDAE;
     --normal-accent-color: #10B981;
+    --gray-background: #F4F4F5;
 }
 body {
     font-family: 'Poppins', sans-serif;
