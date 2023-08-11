@@ -289,6 +289,9 @@ function TopButtons(number){
         document.getElementById('button_home').style.borderBottom = 'none'
         document.getElementById('button_manage').style.borderBottom = 'none'
         document.getElementById('button_media').style.borderBottom = 'solid 4px red'
+
+        // menuIcon.innerText = 'menu'
+        // divTopRight.style.display = 'none'
        
 
     
@@ -315,6 +318,9 @@ function TopButtons(number){
         document.getElementById('button_manage').style.borderBottom = 'solid 4px red'
         document.getElementById('button_media').style.borderBottom = 'none'
 
+        // menuIcon.innerText = 'menu'
+        // divTopRight.style.display = 'none'
+
     //Home Button
     } else if(number === 3) {
         document.getElementById('container_home').style.display = 'block';
@@ -338,6 +344,9 @@ function TopButtons(number){
         document.getElementById('button_home').style.borderBottom = 'solid 4px red'
         document.getElementById('button_manage').style.borderBottom = 'none'
         document.getElementById('button_media').style.borderBottom = 'none'
+
+        // menuIcon.innerText = 'menu'
+        // divTopRight.style.display = 'none'
     }
     
 }
@@ -462,19 +471,22 @@ function menuToggle() {
 }
 
 function toggleCart() {
-    if(divRight.style.display !== 'block') {
-        divRight.style.display = 'block'    
+    if(divRight.style.display === 'block') {
+        divRight.style.display = 'none'    
     } else {
-        divRight.style.display = 'none'
+        divRight.style.display = 'block'
     }
-    console.log(cartIcon.innerText)
-    
-
-
 }
 
 menuIcon.addEventListener('click', menuToggle)
 cartIcon.addEventListener('click', toggleCart)
+window.addEventListener('resize', ()=> {
+    if(innerWidth > 1230) {
+        divRight.style.display = 'block'
+    } else {
+        divRight.style.display = 'none'
+    }
+})
 
 
 // async function GetWeather(latitude, longitude){

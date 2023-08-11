@@ -19,6 +19,10 @@ let input_signup_signupButton = document.getElementById('input_signup_signupButt
 let div_message = document.getElementById('div_message')
 let h3_message = document.getElementById('h3_message')
 
+let Dummy = {
+    password: 'test',
+    username: 'test'
+}
 let Users = []
 InitializeUsersData()
 
@@ -212,6 +216,15 @@ function ShowPassword(id){
     }     
     
 }
+function checkUser() {
+    if(Dummy.username === input_login_username.value && Dummy.password === input_login_password.value) {
+        localStorage.setItem('loggedUser', input_login_username.value)
+        window.location.href = 'home.html'
+
+    } else {   
+        CheckSignup()      
+    }
+}
 
 async function CheckLogin(){
 
@@ -221,7 +234,6 @@ async function CheckLogin(){
         input_login_password.style.border = '3px solid red'
         input_login_password.onkeyup = RemoveBorder
         await ErrorMessageLogin('login. Input your Username and Password')
-
 
     } else {
         let check = false
@@ -342,19 +354,9 @@ function ChangePassword(){
         SaveData()
         document.getElementById('form_login_forgotpassform').reset()
         SuccessMessageLogin('changed password!')
-    
-
-
-
     }
-
-    
-
-
 }
-    
-
 input_signup_signupButton.onclick = CheckSignup
-input_login_loginButton.onclick = CheckLogin
+input_login_loginButton.onclick = checkUser
 input_forgotPassword_forgotButton.onclick = 
 ChangePassword

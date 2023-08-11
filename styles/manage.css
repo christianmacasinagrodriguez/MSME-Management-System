@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
 
 .container-manage {
@@ -9,28 +10,25 @@ body {
     margin: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-
-
-    
+    overflow-y: auto;   
 }
 
 .div-manage-left {
     position: relative;
     background-color: black;
-    top: 70px;
-    height: 500px;
-    width: 400px;
-    left: 50px;
+    top: 
+    5rem;
+    height: 31rem;
+    width: 25rem;
+    left: 3.5rem;
     border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    
-    
+    border-bottom-right-radius: 5px;   
 }
 .div-left-top-buttons {
     display: flex;
     justify-content: right;
     flex-direction: row;
-    height: 50px;
+    height: 3.5rem;
     background-color: black;
     position: absolute;
     right: 0;
@@ -42,19 +40,33 @@ body {
 }
 .div-manage-right {
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    background-color: blue;
-    top: 70px;
-    height: 700px;
+    background-color: var(--white-color);
+    top: 5rem;
+    height: calc(100dvh - 6rem);
     width: calc(100vw - 550px);
-    right: 50px;
+    right: 3.5rem;
     position: fixed;
     overflow-y: auto;
     overflow-x: hidden;
+    color: var(--dark-accent-color);
+    margin-bottom: 10%;
+}
+.div-add {
+    display: none;
+    justify-content: center;
+    cursor: pointer;
+    background-color: var(--dark-accent-color);
+    color: var(--white-color);
+    padding: 1rem;
+}
+.div-add:hover {
+    background-color: var(--normal-accent-color);
 }
 
 .div-manage-right::-webkit-scrollbar {
-    width: 10px;
+    width: 0.8rem;
 }
 .div-manage-right::-webkit-scrollbar-track {
     background: yellow;
@@ -74,7 +86,7 @@ body {
 .top-button-edit {
     background-color: blue;
     color: white;
-    width: 100px;
+    width: 6.25rem;
     transition: opacity, 0.5s;
 
 
@@ -82,7 +94,7 @@ body {
 .top-button-add {
     background-color: green;
     color: white;
-    width: 100px;
+    width: 6.25rem;
     transition: opacity, 0.5s;
 
 }
@@ -100,7 +112,7 @@ body {
 }
 .form-input-item-name, .form-input-item-price, .form-input-item-imageURL, .form-input-item-quantity, .form-input-item-id {
     text-align: center;
-    height: 25px;
+    height: 1.5rem;
     width: 300px;
     border: none;
     border-radius: 5px;
@@ -144,6 +156,22 @@ body {
 th {
     color: greenyellow;
 }
+td:first-child {
+    width: 5%;
+}
+td:nth-child(2) {
+    width: 50%;
+    text-align: start;
+}
+td:nth-child(4) {
+    width: 10%;
+}
+td:nth-child(5) {
+    width: 10%;
+}
+td:last-child {
+    width: 15%;
+}
 th, td {
     text-align: center;
     overflow-x: auto;
@@ -177,44 +205,36 @@ th::-webkit-scrollbar, td::-webkit-scrollbar {
 
 }
 
-@media (min-width: 400px) and (max-width: 1200px) {
-    .container-manage {
-        grid-template-columns: 1fr;
-        place-items: center;
-    }
+@media (max-width: 930px) {
     .div-manage-left {
-        position: relative;
-        background-color: black;
-        top: 70px;
-        height: 500px;
-        width: 100vw;
-        left: 50%;
-        top: 50%;
-        margin-bottom: 100px;
-        transform: translate(-50%, -50%);
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
+        display: block;
+        position:fixed;
+        top: 4rem;
+        inset: 5%;
+        margin: 20% auto 10%;
+        height: 80%;
+        overflow-y: auto;
+        z-index: 30;
         
         
-        
+       
     }
+
     .div-manage-right {
+        position: fixed;
+        top: 4rem;
+        right: 1%;
+        left: 1%;
+        height: 90%;
+        width: 100%;
+        margin-bottom: 10%;
+    }
+    .manage-table {
+        display: none;
+    }
+    .div-add {
         display: flex;
-        justify-content: flex-start;
-        background-color: blue;
-        top: 70px;
-        height: 700px;
-        width: 100vw;
-        right: 0;
-        left: 0;
-        position: relative;
-        overflow-y: auto;
-        overflow-x: hidden;
-        margin-bottom: 50px;
     }
-    .container-manage {
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
+
 }
 
