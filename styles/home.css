@@ -39,11 +39,12 @@ body {
 }
 
 .overlay {
-    z-index: 200;
+    z-index: 5;
     position: fixed;
     display: none;
     place-items: center;
     background-color: black;
+    opacity: 0.9;
     color: #fff;
     top: 0;
     right: 0;
@@ -99,10 +100,10 @@ body {
     right: 0;
     left: 0;
     height: 3.5rem;
-    background-color: black;
+    background-color: var(--dark-accent-color);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    z-index: 1;
+    z-index: 10;
     box-shadow: 0 1px 10px var(--dark-accent-color);
 }
 .cart-icon {
@@ -292,9 +293,6 @@ body {
 }
 
 @media (max-width: 800px) {
-    .overlay {
-        display: grid;
-    }
     .div-time {
         display: none;
     }
@@ -307,7 +305,7 @@ body {
     .div-top {
         display: grid;
         grid-template-columns: 4fr 1fr 1fr;
-        z-index: 1; 
+        z-index: 10; 
     }
     .div-menu {
         display: flex;
@@ -317,14 +315,15 @@ body {
         display: flex;
     }
     .div-top-right {
-        background-color: var(--dark-accent-color);
+        
         position: fixed;
         top: 3.5rem;
         right: 0;
         left: 0;
         bottom: 0;
-        width: 100%;
+        width: 50%;
         height: 100vh;
+        margin: 0 auto;
         display: none;
         flex-direction: column;
         justify-content: center;

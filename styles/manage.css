@@ -15,21 +15,20 @@ body {
 
 .div-manage-left {
     position: relative;
-    background-color: black;
+    background-color: var(--dark-accent-color);
     top: 
     5rem;
-    height: 31rem;
-    width: 25rem;
+    height: fit-content;
+    width: 25%;
     left: 3.5rem;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;   
 }
 .div-left-top-buttons {
-    display: flex;
-    justify-content: right;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     height: 3.5rem;
-    background-color: black;
+    background-color: var(--dark-accent-color);
     position: absolute;
     right: 0;
     left: 0;
@@ -73,28 +72,28 @@ body {
     border-radius: 5px;
 }
 .div-manage-right::-webkit-scrollbar-thumb {
-    background: green;
+    background: var(--dark-accent-color);
     border-radius: 5px;
 }
 .top-button-delete {
     background-color: red;
-    color: white;
-    width: 100px;
+    color: var(--white-color);
+    width: 100%;
     transition: opacity, 0.5s;
 
 }
 .top-button-edit {
     background-color: blue;
-    color: white;
-    width: 6.25rem;
+    color: var(--white-color);
+    width: 100%;
     transition: opacity, 0.5s;
 
 
 }
 .top-button-add {
-    background-color: green;
-    color: white;
-    width: 6.25rem;
+    background-color: var(--normal-accent-color);
+    color: var(--white-color);
+    width: 100%;
     transition: opacity, 0.5s;
 
 }
@@ -113,7 +112,7 @@ body {
 .form-input-item-name, .form-input-item-price, .form-input-item-imageURL, .form-input-item-quantity, .form-input-item-id {
     text-align: center;
     height: 1.5rem;
-    width: 300px;
+    width: 70%;
     border: none;
     border-radius: 5px;
     margin-bottom: 5px;
@@ -124,7 +123,7 @@ body {
     margin-bottom: 5px;
 }
 .form-input-item-id {
-    margin-top: 20px;
+    margin-top: 1.5rem;
 
 }
 .form-input-item-id, 
@@ -132,14 +131,15 @@ body {
     visibility: hidden;
 }
 .form-input-item-button {
-    margin-top: 50px;
-    background-color: green;
+    margin-top: 10%;
+    background-color: var(--normal-accent-color);
     color: white;
     border: none;
     padding: 15px;
-    width: 300px;
+    width: 70%;
     border-radius: 30px;
     transition: opacity, 0.5s;
+    margin-bottom: 10%;
 }
 .form-input-item-button:hover {
     opacity: 0.8;
@@ -185,7 +185,7 @@ th::-webkit-scrollbar-track, td::-webkit-scrollbar-track {
 }
 th::-webkit-scrollbar-thumb, td::-webkit-scrollbar-thumb {
     width: 5px;
-    background: green;
+    background: var(--dark-accent-color);
     border-radius: 2px;
 }
 th::-webkit-scrollbar, td::-webkit-scrollbar {
@@ -193,7 +193,7 @@ th::-webkit-scrollbar, td::-webkit-scrollbar {
 }
 
 .div-message {
-    margin-top: 50px;
+    margin-top: 3.5rem;
     text-align: center;
     align-items: center;
     display: flex;
@@ -208,6 +208,7 @@ th::-webkit-scrollbar, td::-webkit-scrollbar {
 @media (max-width: 930px) {
     .div-manage-left {
         display: block;
+        width: 80%;
         position:fixed;
         top: 4rem;
         inset: 5%;

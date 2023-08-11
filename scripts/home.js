@@ -32,6 +32,7 @@ const cartIcon = document.getElementById('cart-icon')
 const divTopRight = document.querySelector('.div-top-right')
 const divRight = document.querySelector('.div-right')
 const cartQuantity = document.querySelector('.cart-quantity')
+const overlay = document.querySelector('.overlay')
 
 
 let f = new Intl.NumberFormat('en-us', {
@@ -462,9 +463,11 @@ function menuToggle() {
     if(menuIcon.innerText === 'menu') {
         menuIcon.innerText = 'close'
         divTopRight.style.display = 'flex'
+        overlay.style.display = 'block'
     } else {
         menuIcon.innerText = 'menu'
         divTopRight.style.display = 'none'
+        overlay.style.display = 'none'
 
     }
 
