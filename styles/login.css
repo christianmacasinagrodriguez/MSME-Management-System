@@ -40,11 +40,14 @@ body {
 }
 
 .div-login-main {
-    display: grid;
-    place-items: center;
+    padding-top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: auto;
-    height: 100dvh;
+    height: calc(100dvh - 15%);
     width: 100vw;
+    flex-direction: column;
 }
 .div-login-form {
     display: flex;
@@ -61,7 +64,7 @@ body {
     box-shadow: 0 0 15px var(--light-accent-color);
     padding: 30px;
     border-radius: 10px;
-    margin-bottom: 50%;
+    margin-bottom: 2rem;
 }
 .input-login-loginButton, .input-forgotPassword-forgotButton, .input-signup-signupButton {
     border: none;
@@ -84,7 +87,7 @@ body {
 }
 
 #button-back {
-    margin-top: 5%;
+    margin-top: 20%;
     background-color: transparent;
     color: var(--normal-accent-color);
     transition: opacity, 1s;
