@@ -11,10 +11,11 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-image: url(./loginbg.jfif);    
-    height: fit-content;
+    height: 100dvh;
     width: 100vw;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
     
 }
 .overlay {
@@ -41,6 +42,9 @@ body {
 .div-login-main {
     display: grid;
     place-items: center;
+    overflow: auto;
+    height: 100dvh;
+    width: 100vw;
 }
 .div-login-form {
     display: flex;
@@ -57,6 +61,7 @@ body {
     box-shadow: 0 0 15px var(--light-accent-color);
     padding: 30px;
     border-radius: 10px;
+    margin-bottom: 50%;
 }
 .input-login-loginButton, .input-forgotPassword-forgotButton, .input-signup-signupButton {
     border: none;
