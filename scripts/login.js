@@ -222,7 +222,7 @@ function checkUser() {
         window.location.href = 'home.html'
 
     } else {   
-        CheckSignup()      
+        CheckLogin()      
     }
 }
 
