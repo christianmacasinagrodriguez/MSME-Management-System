@@ -153,12 +153,13 @@ function Toggle(number) {
 
 function SuccessMessageLogin(message) {
     return new Promise((resolve, reject) => {
+        div_message.style.display = 'flex'
         div_message.style.visibility = 'visible'
         div_message.style.backgroundColor = 'aqua'
         div_message.style.color = 'green'
         h3_message.innerText = `Successfully ${message}`
         setTimeout(() => {
-            div_message.style.visibility = 'hidden'
+            div_message.style.display = 'none'
             resolve('success')      
         }, 3000);
     })
@@ -166,12 +167,13 @@ function SuccessMessageLogin(message) {
 
 function ErrorMessageLogin(message) {
     return new Promise((resolve, reject) => {
+        div_message.style.display = 'flex'
         div_message.style.visibility = 'visible'
         div_message.style.backgroundColor = 'lightCoral'
         div_message.style.color = 'red'
         h3_message.innerText = `Failed to ${message}`
         setTimeout(() => {
-            div_message.style.visibility = 'hidden'
+            div_message.style.display = 'none'
             resolve('error')      
         }, 3000);
     })

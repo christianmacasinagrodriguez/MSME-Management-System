@@ -40,12 +40,12 @@ body {
 }
 
 .div-login-main {
-    padding-top: 15%;
+    padding-top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: auto;
-    height: calc(100dvh - 15%);
+    height: 100dvh;
     width: 100vw;
     flex-direction: column;
 }
@@ -64,7 +64,7 @@ body {
     box-shadow: 0 0 15px var(--light-accent-color);
     padding: 30px;
     border-radius: 10px;
-    margin-bottom: 2rem;
+    margin-bottom: 30%;
 }
 .input-login-loginButton, .input-forgotPassword-forgotButton, .input-signup-signupButton {
     border: none;
@@ -87,24 +87,25 @@ body {
 }
 
 #button-back {
-    margin-top: 20%;
     background-color: transparent;
     color: var(--normal-accent-color);
     transition: opacity, 1s;
     font-size: 3rem;
     display: none;
     cursor: pointer;
+    margin-top: 20dvh;
 }
 #button-back:hover {
     color: var(--light-accent-color);
 }
 
 .div-message {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     visibility: hidden;
     border-radius: 5px;
+    padding: 1rem;
 }
 
 a:visited {
