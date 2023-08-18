@@ -275,7 +275,7 @@ function TopButtons(number){
         document.getElementById('button_home').style.backgroundColor = 'white'
         document.getElementById('button_home').style.color = 'black'
         
-        document.getElementById('container_media').style.display = 'block';
+        document.getElementById('container_media').style.display = 'flex';
         document.getElementById('container_media').style.visibility = 'visible';
         document.getElementById('button_media').style.backgroundColor = 'yellow'
         

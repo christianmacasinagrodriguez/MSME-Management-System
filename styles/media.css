@@ -1,24 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --black-color: #000;
+    --white-color: #fff;
+    --dark-accent-color: #031E15;
+    --light-accent-color: #2EEDAE;
+    --normal-accent-color: #10B981;
+    --gray-background: #F4F4F5;
+}
 
 body {
     font-family: 'Poppins', sans-serif;
 }
 .container-media {
-    display: grid;
-    grid-template-columns: 1000px 1fr;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100vw;
+    height: 100dvh;
+    box-sizing: border-box;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(gray-background);
+}
+.div-video-image-view {
+    height: 100%;
+    color: white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    margin-top: 10px;
     overflow-y: auto;
-    overflow-x: hidden;
+    overflow-x: hidden; 
 }
 
-.div-left {
-    background-color: black;
-    position: fixed;
-    width: 400px;
-    top: 55px;
-    right: 20px;
-    bottom: 0;
-    display: grid;
-    grid-template-rows: 50px 1fr 1fr 1fr;
+.div-media-right {
+    background-color: var(--white-color);
+    width: 50%;
+    height: calc(100dvh - 3.5rem);
+    display: flex;
+    flex-direction: column;
     row-gap: 1px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -35,7 +57,7 @@ input[type="file"] {
     display: none;
 }
 .label-input-file {
-    background-color: blue;
+    background-color: var(--dark-accent-color);
     padding: 5px;
     border-radius: 5px;
     transition: opacity 0.5s;
@@ -65,12 +87,10 @@ input[type="file"] {
 .image-view {
     display: none;
     color: white;
-    position: absolute;
-    top: 10px;
-    height: 650px;
-    width: calc(100vw - 500px);
-    left: 0;
+    height: 80%;
+    width: fit-content;
     object-fit: contain;
+    object-position: center;
     
     
     
@@ -78,11 +98,16 @@ input[type="file"] {
 
 .video-view {
     color: white;
-    position: absolute;
-    width: calc(100vw - 500px);
-    left: 0;
-    top: 10px;
-    
+    width: 100%;
+    height: fit-content;
+}
+#p1_title {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    background-color: var(--dark-accent-color);
 
 }
 
@@ -113,21 +138,11 @@ input[type="file"] {
 
 }
 
-.div-video-image-view {
-    height: 100%;
-    color: white;
-    position: fixed;
-    width: calc(100vw - 500px);
-    top: 50px;
-    bottom: 10px;
-    left: 30px;
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    overflow-y: auto;
-    overflow-x: hidden;
 
-    
+.div-media-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .div-buttons {
@@ -169,56 +184,19 @@ input[type="file"] {
 .previous-button:hover, .next-button:hover {
     cursor: pointer;
 }
-#p1_title {
-    display: flex;
-    justify-content: center;
-    height: 50px;
-    top: 0px;
-    right: 0;
-    left: 0;
-    width: calc(100vw - 500px);
-    position: absolute;
-    align-items: center;
-    background-color: blue;
 
-}
-@media (min-width: 400px) and (max-width: 1000px) {
+@media (max-width: 930px) {
     .container-media {
-        display: block;
-    }
-    .div-left {
-        position: relative;
-        width: 100vw;
+        flex-direction: column;
+        row-gap: 2rem;
         overflow-y: auto;
-        overflow-x: hidden;
-
-
     }
-
-    .div-video-image-view, .div-buttons, #p1_title {
-        position: relative; /* enable absolute positioning of the video */
-        width: 100vw; /* width of the container */
-        
-        
-
-
+    .div-video-image-view {
+        width: 100%;
+        height: fit-content;
     }
-    .image-view, .video-view {
-        position: absolute;
-        min-width: 350px;
-        
-        
-
+    .div-media-right {
+        width: 100%;
+        height: fit-content;
     }
-
-    .div-video, .div-music, .div-photo {
-        position: absolute;
-        left: 50px;
-        margin: 50px;
-        width: calc(100vh - 50px);
-
-    }
-     
-
-
 }
