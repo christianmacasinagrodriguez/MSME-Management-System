@@ -203,6 +203,7 @@ function PopulateVideos() {
             videoTitle.className = 'video'
             videoTitle.id = video.blob
             videoTitle.style.margin= '5px'
+            videoTitle.style.width= '90%'
             videoTitle.addEventListener('mouseover', ()=> videoTitle.style.backgroundColor = 'var(--light-accent-color)')
             videoTitle.addEventListener('mouseleave', ()=> videoTitle.style.backgroundColor = 'var(--white-color)')
             videoTitle.addEventListener('click', function(event){
@@ -244,6 +245,7 @@ function PopulateAudios(){
             musicTitle.id = audio.blob
             musicTitle.style.marginTop = '5px'
             musicTitle.style.margin= '5px'
+            musicTitle.style.width= '90%'
             musicTitle.addEventListener('mouseover', ()=> musicTitle.style.backgroundColor = 'var(--light-accent-color)')
             musicTitle.addEventListener('mouseleave', ()=> musicTitle.style.backgroundColor = 'var(--white-color)')
             musicTitle.addEventListener('click', function(event){
@@ -282,6 +284,7 @@ function PopulatePhotos(){
             photoTitle.className = 'video'
             photoTitle.id = photo.blob
             photoTitle.style.margin= '5px'
+            photoTitle.style.width= '90%'
             photoTitle.addEventListener('mouseover', ()=> photoTitle.style.backgroundColor = 'var(--light-accent-color)')
             photoTitle.addEventListener('mouseleave', ()=> photoTitle.style.backgroundColor = 'var(--white-color)')
         
