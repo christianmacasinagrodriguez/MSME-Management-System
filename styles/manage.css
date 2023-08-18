@@ -8,16 +8,13 @@ body {
 .container-manage {
     padding: 0;
     margin: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     overflow-y: auto;   
 }
 
 .div-manage-left {
     position: relative;
     background-color: var(--dark-accent-color);
-    top: 
-    5rem;
+    top: 5rem;
     height: fit-content;
     width: 25%;
     left: 3.5rem;
@@ -41,10 +38,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    row-gap: 1rem;
     background-color: var(--white-color);
     top: 5rem;
     height: calc(100dvh - 6rem);
-    width: calc(100vw - 550px);
+    width: 60%;
     right: 3.5rem;
     position: fixed;
     overflow-y: auto;
@@ -157,7 +155,7 @@ th {
     color: greenyellow;
 }
 td:first-child {
-    width: 5%;
+    width: 10%;
 }
 td:nth-child(2) {
     width: 50%;
@@ -170,7 +168,7 @@ td:nth-child(5) {
     width: 10%;
 }
 td:last-child {
-    width: 15%;
+    width: 20%;
 }
 th, td {
     text-align: center;
@@ -207,7 +205,7 @@ th::-webkit-scrollbar, td::-webkit-scrollbar {
 
 @media (max-width: 930px) {
     .div-manage-left {
-        display: block;
+        display: none;
         width: 80%;
         position:fixed;
         top: 4rem;
@@ -227,12 +225,13 @@ th::-webkit-scrollbar, td::-webkit-scrollbar {
         right: 1%;
         left: 1%;
         height: 90%;
-        width: 100%;
+        width: 100vw;
         margin-bottom: 10%;
     }
     .manage-table {
-        display: none;
+        width: 100%;
     }
+
     .div-add {
         display: flex;
     }

@@ -9,6 +9,9 @@ let form_input_item_quantity = document.getElementById('form_input_item_quantity
 let form_input_item_inStock = document.getElementById('form_input_item_inStock')
 let form_input_item_button = document.getElementById('form_input_item_button')
 let div_message = document.getElementById('div_message')
+const plus_icon = document.getElementById('plus-icon')
+const div_manage_left = document.getElementById('div_manage_left')
+const manage_table = document.getElementById('manage_table')
 
 PopulateList()
 IdChange()
@@ -92,8 +95,8 @@ function AddButton() {
     document.getElementById('form_input_item_button').style.backgroundColor = 'green'
     document.getElementById('form_input_item_button').value = 'ADD'
     form_input_item_id.style.visibility = 'hidden'
-    div_message.style.backgroundColor = 'black';
-    div_message.innerText = ''
+    div_message.style.backgroundColor = 'green';
+    div_message.innerText = 'Please input the details of the new product.'
     form_input_item_name.style.visibility = 'visible'
     form_input_item_price.style.visibility = 'visible'
     form_input_item_imageURL.style.visibility = 'visible'
@@ -445,5 +448,25 @@ async function DeleteProduct(){
     
 
 }
+function addItemsToggle() {
+    // div_manage_left
+    console.log(plus_icon.innerText)
+    switch(plus_icon.innerText) {
+        case 'add':
+            div_manage_left.style.display = 'block'
+            manage_table.classList.add('hide')
+            plus_icon.innerText = 'close'
+            break
+
+        case 'close':
+            div_manage_left.style.display = 'none'
+            manage_table.classList.remove('hide')
+            plus_icon.innerText = 'add'
+            break
+    }
+
+}
+
+plus_icon.addEventListener('click', addItemsToggle)
 
 
