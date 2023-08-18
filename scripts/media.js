@@ -17,6 +17,10 @@ let videoMedias = []
 let audioMedias = []
 let photoMedias = []
 
+let div_video = document.getElementById('div_video')
+let div_music = document.getElementById('div_music')
+let div_photo = document.getElementById('div_photo')
+
 function RetrieveMedias(){
     let newMedias = JSON.parse(localStorage.getItem('Medias'))
     if(Array.isArray(newMedias)) {
@@ -183,7 +187,7 @@ function GetFiles() {
 
 
 function PopulateVideos() {
-    let div_video = document.getElementById('div_video')
+    
     div_video.innerText = ''
     Sort(videoMedias)
     if(videoMedias.length > 0){
@@ -192,11 +196,15 @@ function PopulateVideos() {
         videoMedias.forEach(video => {
             counter ++
             let videoTitle = document.createElement('div')
-            videoTitle.style.color = 'white'
+            videoTitle.style.color = 'var(--dark-accent-color)'
+            videoTitle.style.backgroundColor = 'var(--white-color)'
+            videoTitle.style.padding = '1rem 2rem'
             videoTitle.style.fontSize = '10px'
             videoTitle.className = 'video'
             videoTitle.id = video.blob
             videoTitle.style.margin= '5px'
+            videoTitle.addEventListener('mouseover', ()=> videoTitle.style.backgroundColor = 'var(--light-accent-color)')
+            videoTitle.addEventListener('mouseleave', ()=> videoTitle.style.backgroundColor = 'var(--white-color)')
             videoTitle.addEventListener('click', function(event){
                 mediaType = 'video'
 
@@ -220,7 +228,6 @@ function PopulateVideos() {
 
 function PopulateAudios(){
     
-    let div_music = document.getElementById('div_music')
     div_music.innerText = ''
     let musicTitle = document.createElement('div') 
     Sort(audioMedias)
@@ -229,12 +236,16 @@ function PopulateAudios(){
         audioMedias.forEach(audio => {
             let musicTitle = document.createElement('div') 
 
-            musicTitle.style.color = 'white'
+            musicTitle.style.color = 'var(--dark-accent-color)'
+            musicTitle.style.backgroundColor = 'var(--white-color)'
+            musicTitle.style.padding = '1rem 2rem'
             musicTitle.style.fontSize = '10px'
             musicTitle.className = 'video'
             musicTitle.id = audio.blob
             musicTitle.style.marginTop = '5px'
             musicTitle.style.margin= '5px'
+            musicTitle.addEventListener('mouseover', ()=> musicTitle.style.backgroundColor = 'var(--light-accent-color)')
+            musicTitle.addEventListener('mouseleave', ()=> musicTitle.style.backgroundColor = 'var(--white-color)')
             musicTitle.addEventListener('click', function(event){
                 mediaType = 'audio'
     
@@ -258,18 +269,23 @@ function PopulateAudios(){
 }
 function PopulatePhotos(){
     
-    let div_photo = document.getElementById('div_photo')
     div_photo.innerText = ''
     Sort(photoMedias)
     if(photoMedias.length > 0) {
         photoMedias.forEach(photo => {
             let photoTitle = document.createElement('div') 
 
-            photoTitle.style.color = 'white'
+            photoTitle.style.color = 'var(--dark-accent-color)'
+            photoTitle.style.backgroundColor = 'var(--white-color)'
+            photoTitle.style.padding = '1rem 2rem'
             photoTitle.style.fontSize = '10px'
             photoTitle.className = 'video'
             photoTitle.id = photo.blob
             photoTitle.style.margin= '5px'
+            photoTitle.addEventListener('mouseover', ()=> photoTitle.style.backgroundColor = 'var(--light-accent-color)')
+            photoTitle.addEventListener('mouseleave', ()=> photoTitle.style.backgroundColor = 'var(--white-color)')
+        
+            
             photoTitle.addEventListener('click', function(event){
                 mediaType = 'photo'
     
@@ -337,15 +353,15 @@ function ToggleNextButton(){
 
        
 
-        if(document.getElementById('previous_button').style.display === 'none' && document.getElementById('next_button').style.display === 'none') {
+        if(document.getElementById('previous_button').style.display === 'block' && document.getElementById('next_button').style.display === 'block') {
 
-            document.getElementById('previous_button').style.display = 'block'
-            document.getElementById('next_button').style.display = 'block'
+            document.getElementById('previous_button').style.display = 'none'
+            document.getElementById('next_button').style.display = 'none'
             if(mediaType = 'video'){
-                video_view.play()
+                video_view.pause()
 
             } else {
-                video_view.pause() 
+                video_view.play() 
 
             }
             video_view.style.display === 'none' && video_view.pause() 
@@ -354,13 +370,13 @@ function ToggleNextButton(){
         
         } else {
             
-            document.getElementById('previous_button').style.display = 'none'
-            document.getElementById('next_button').style.display = 'none'
+            document.getElementById('previous_button').style.display = 'block'
+            document.getElementById('next_button').style.display = 'block'
             if(mediaType = 'video'){
-                video_view.pause()
+                video_view.play()
 
             } else {
-                video_view.play() 
+                video_view.pause() 
 
             } 
             video_view.style.display === 'none' && video_view.pause() 
@@ -573,6 +589,44 @@ function Sort(toSort) {
 
 // RetrieveMedias()
 // InitializedMedia()
+
+function mediaCategoryToggle(param){
+    let all_toggled = document.getElementsByClassName('category-toggle')
+    
+    switch(param.innerText){
+        case 'Videos': 
+            for (i of all_toggled) {
+                i.classList.remove('category-toggle')
+            }
+            
+            div_video.style.display = 'flex'
+            div_music.style.display = 'none'
+            div_photo.style.display = 'none'
+            param.classList.add('category-toggle')
+            break
+        case 'Music':
+            for (i of all_toggled) {
+                i.classList.remove('category-toggle')
+            }
+            div_video.style.display = 'none'
+            div_music.style.display = 'flex'
+            div_photo.style.display = 'none'
+            param.classList.add('category-toggle')
+            break
+        case 'Images':
+            for (i of all_toggled) {
+                i.classList.remove('category-toggle')
+            }
+            div_video.style.display = 'none'
+            div_music.style.display = 'none'
+            div_photo.style.display = 'flex'
+            param.classList.add('category-toggle')
+            
+            break
+
+    }
+
+}
 GetFiles()
 ToggleNextButton()
 

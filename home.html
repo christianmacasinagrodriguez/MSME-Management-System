@@ -90,33 +90,33 @@
     <div class="container-media" id="container_media">
         
         <div class="div-video-image-view"> 
-            <p1 id="p1_title"></p1><br>
-            <img class="image-view" id="image_view">
-            <video class="video-view" id="video_view" controls>
-                <div class="div-media-buttons">
-                    <button class="previous-button" id="previous_button">PREVIOUS</button>
-                    <button class="next-button" id="next_button">NEXT</button>
-                </div>
-            </video>
-            
-           
+            <p1 id="p1_title"></p1><br>  
+            <div class="div-media-buttons">
+                <video class="video-view" id="video_view" controls>
+                </video>
+                <img class="image-view" id="image_view"> 
+                <button class="previous-button" id="previous_button">PREV</button>
+                <button class="next-button" id="next_button">NEXT</button>
+            </div>  
         </div>
         <div class="div-media-right">
-            <div align="center" class="div-file" id="div_file">
+            <div align="center" class="div-file-category">
+                
+                <h4 class="div-category-video category-toggle" onclick="mediaCategoryToggle(this)">Videos</h4>
+                <h4 class="div-category-music" onclick="mediaCategoryToggle(this)">Music</h4>
+                <h4 class="div-category-image" onclick="mediaCategoryToggle(this)">Images</h4>
                 <label class="label-input-file">
                     <input  type="file" multiple class="input-file" id="input_file">
-                    CLICK TO ADD FILES
+                    <span class="material-symbols-outlined">
+                        folder
+                    </span>
                 </label>
                 
                 
             </div>
-            
-            <h3 style="color: yellow">VIDEOS</h1>
-            <div class="div-video" id="div_video"></div>
-            <h3 style="color: orangered;">AUDIO</h1>
-            <div class="div-music" id="div_music"></div>
-            <h3 style="color: green;">IMAGES</h1>
-            <div class="div-photo" id="div_photo"></div>
+            <div class="div-video" id="div_video">No available video.</div>
+            <div class="div-music" id="div_music">No available music.</div>
+            <div class="div-photo" id="div_photo">No available images.</div>
 
         </div>
         

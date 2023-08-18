@@ -23,7 +23,7 @@ body {
     background-color: var(gray-background);
 }
 .div-video-image-view {
-    height: 100%;
+    height: 100dvh;
     color: white;
     width: 50%;
     display: flex;
@@ -41,10 +41,11 @@ body {
     height: calc(100dvh - 3.5rem);
     display: flex;
     flex-direction: column;
-    row-gap: 1px;
+    align-items: center;
     overflow-y: auto;
     overflow-x: hidden;
     border-radius: 10px;
+    padding: 1rem;
 }
 .div-file{
     display: flex;
@@ -52,17 +53,15 @@ body {
     justify-content: center;
    
 }
+.div-file-category::-webkit-scrollbar {
+    display: none;
+
+}
 /* styling input type=file */
 input[type="file"] {
     display: none;
 }
-.label-input-file {
-    background-color: var(--dark-accent-color);
-    padding: 5px;
-    border-radius: 5px;
-    transition: opacity 0.5s;
 
-}
 .label-input-file:hover {
     cursor: pointer;
     opacity: 0.8;
@@ -87,8 +86,8 @@ input[type="file"] {
 .image-view {
     display: none;
     color: white;
-    height: 80%;
-    width: fit-content;
+    height: fit-content;
+    width: 100%;
     object-fit: contain;
     object-position: center;
     
@@ -114,21 +113,49 @@ input[type="file"] {
 
 
 /* "justify-content: flex-start;" foxed the issue where the items above are not vissible. The div is not acrolling all the way up. */
+.div-file-category {
+    
+    color: var(--black-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    column-gap: 1rem;
+    height: fit-content;
+}
+.div-category-video, .div-category-music, .div-category-image, .label-input-file {
+    padding: 1rem 2rem;
+    background-color: var(--gray-background);
+    margin-bottom: 0;
+    margin-top: 0;
+    cursor: pointer;
+    height: 1rem;
+    border-bottom: 5px solid var(--white-color);
+
+}
+.div-category-video {
+    margin-left: 10%;
+}
+.label-input-file {
+    margin-right: 10%;
+}
 
 .div-video, .div-music, .div-photo {
     display: flex ;
-    background-color: #121212;
-    width: 300px;
-    height: 150px;
+    background-color: var(--gray-background);
+    color: var(--dark-accent-color);
+    width: 100%;
+    height: calc(100dvh - 25dvh);
     justify-content: flex-start;
-    margin-left: 50px;
     overflow-y: auto;
     overflow-x: hidden;
     flex-direction: column;
     white-space: nowrap;padding: 5px;
-    border: 1px solid green;
-    box-sizing: border-box;
-    
+    box-sizing: border-box;   
+}
+
+.div-music, .div-photo {
+    display: none;
 }
 
 .video:hover {
@@ -141,62 +168,66 @@ input[type="file"] {
 
 .div-media-buttons {
     display: flex;
+    position: relative;
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    z-index: 100;
 }
 
-.div-buttons {
-    display: flex;
-    align-items: center;
-    top: 100px;
-    position: fixed;
-    left: 30px;
- 
-    
-    
-
-}
 .previous-button {
-    margin-left: 40px;
     position: absolute;
-    top: 300px;
-    left: 30px;
-    z-index: 10;
+    left: 30%;
+    top: 50%;
+    z-index: 100;
     height: 50px;
-    width: 100PX;
     opacity: 0.9;
     display: none;
+    padding: 1rem 2rem;
 
 }
 
 .next-button {
-    
-    right: 880px;
-    position: absolute;
-    z-index: 10;
     height: 50px;
-    width: 100PX;
+    position: absolute;
+    right: 30%;
+    top: 50%;
     opacity: 0.9;
+    z-index: 100;
     display: none;
-    top: 300px;
+    padding: 1rem 2rem;
 }
 
 .previous-button:hover, .next-button:hover {
     cursor: pointer;
 }
+.category-toggle {
+    color: green;
+    border-bottom: 5px solid var(--gray-background);
+}
 
 @media (max-width: 930px) {
     .container-media {
         flex-direction: column;
+        align-items: start;
         row-gap: 2rem;
+        height: 100dvh;
         overflow-y: auto;
     }
     .div-video-image-view {
         width: 100%;
-        height: fit-content;
+        height: 100%;
     }
     .div-media-right {
         width: 100%;
-        height: fit-content;
+        height: 100%;
+    }
+    .div-file-category {
+        width: 100vw;
+        overflow-x: auto;
+        overflow-y: hidden;
+        justify-content: start;
+
     }
 }
