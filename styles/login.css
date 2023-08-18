@@ -48,10 +48,30 @@ body {
     height: 100dvh;
     width: 100vw;
     flex-direction: column;
+    
+}
+input {
+    width: 100%;
+}
+input[type="checkbox"] {
+    width: fit-content;
+}
+
+select {
+    width: 100%; 
+    height: 2.5rem; 
+    border-radius:0.5rem;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 .div-login-form {
     display: flex;
     justify-content: center;
+    align-items: start;
+    width: 50%;
+    height: 100dvh;
+   
+
    
 }
 .form-login-sform, .form-login-forgotform {
@@ -60,11 +80,16 @@ body {
 .form-login-lform, .form-login-sform, .form-login-forgotform {
    
     color: white;
+    width: 200%;
     background-color: rgba(3,30,21, 0.9);
     box-shadow: 0 0 15px var(--light-accent-color);
     padding: 30px;
     border-radius: 10px;
     margin-bottom: 30%;
+    margin-top: 10%;
+    width: 50%;
+    height: fit-content;
+ 
 }
 .input-login-loginButton, .input-forgotPassword-forgotButton, .input-signup-signupButton {
     border: none;
@@ -75,6 +100,7 @@ body {
     background-color: var(--normal-accent-color);
     transition: all, 0.5s;
     margin-bottom: 0px;
+    width: 100%;
 }
 
 
@@ -90,7 +116,7 @@ body {
     background-color: transparent;
     color: var(--normal-accent-color);
     transition: opacity, 1s;
-    font-size: 3rem;
+    font-size: 2rem;
     display: none;
     cursor: pointer;
     margin-top: 20dvh;
@@ -106,6 +132,7 @@ body {
     visibility: hidden;
     border-radius: 5px;
     padding: 1rem;
+    margin-top: 10%;
 }
 
 a:visited {
@@ -121,6 +148,9 @@ a:link {
     body {
         height: 100dvh;
         overflow-x: hidden;
+    }
+    .div-login-form {
+        width: 90%;
     }
 }
 
