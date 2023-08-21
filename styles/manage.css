@@ -124,8 +124,7 @@ body {
     margin-top: 1.5rem;
 
 }
-.form-input-item-id, 
-.form-input-item-inStock {
+.form-input-item-id{
     visibility: hidden;
 }
 .form-input-item-button {

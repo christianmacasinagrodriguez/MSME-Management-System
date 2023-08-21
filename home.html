@@ -138,7 +138,10 @@
                 <input type="number" class="form-input-item-price" id="form_input_item_price" placeholder="Product Price"><br>
                 <input type="text" class="form-input-item-imageURL" id="form_input_item_imageURL" placeholder="Product Image URL"><br>
                 <input type="number" class="form-input-item-quantity" id="form_input_item_quantity" placeholder="Product Quantity"><br>
-                <input type="radio" class="form-input-item-inStock" id="form_input_item_inStock"><br>
+                <fieldset class="form-input-item-inStock">
+                    Is it available?
+                    <input type="checkbox"  id="form_input_item_inStock"
+                </fieldset><br>
                 <input type="button" class="form-input-item-button" id="form_input_item_button" onclick="CheckInputs()" value="ADD">
                 
             </form>

@@ -1,15 +1,17 @@
 
 
 
-let form_input_item_id = document.getElementById('form_input_item_id')
-let form_input_item_name = document.getElementById('form_input_item_name')
-let form_input_item_price = document.getElementById('form_input_item_price')
-let form_input_item_imageURL = document.getElementById('form_input_item_imageURL')
-let form_input_item_quantity = document.getElementById('form_input_item_quantity')
-let form_input_item_inStock = document.getElementById('form_input_item_inStock')
-let form_input_item_button = document.getElementById('form_input_item_button')
-let div_message = document.getElementById('div_message')
+const form_input_item_id = document.getElementById('form_input_item_id')
+const form_input_item_name = document.getElementById('form_input_item_name')
+const form_input_item_price = document.getElementById('form_input_item_price')
+const form_input_item_imageURL = document.getElementById('form_input_item_imageURL')
+const form_input_item_quantity = document.getElementById('form_input_item_quantity')
+const form_input_item_inStock = document.getElementById('form_input_item_inStock')
+const form_input_item_button = document.getElementById('form_input_item_button')
+const form_input_item_inStock_class = document.querySelector('.form-input-item-inStock')
+const div_message = document.getElementById('div_message')
 const plus_icon = document.getElementById('plus-icon')
+const div_add = document.querySelector('.div-add')
 const div_manage_left = document.getElementById('div_manage_left')
 const manage_table = document.getElementById('manage_table')
 
@@ -101,6 +103,7 @@ function AddButton() {
     form_input_item_price.style.visibility = 'visible'
     form_input_item_imageURL.style.visibility = 'visible'
     form_input_item_quantity.style.visibility = 'visible'
+    form_input_item_inStock_class.style.visibility = 'visible'
 
 }
 async function EditButton() {
@@ -117,6 +120,7 @@ async function EditButton() {
     form_input_item_price.style.visibility = 'hidden'
     form_input_item_imageURL.style.visibility = 'hidden'
     form_input_item_quantity.style.visibility = 'hidden'
+    form_input_item_inStock_class.style.visibility = 'hidden'
 
 
 }
@@ -136,6 +140,7 @@ function DeleteButton(){
     form_input_item_price.style.visibility = 'hidden'
     form_input_item_imageURL.style.visibility = 'hidden'
     form_input_item_quantity.style.visibility = 'hidden'
+    form_input_item_inStock_class.style.visibility = 'hidden'
     
 
 }
@@ -467,6 +472,6 @@ function addItemsToggle() {
 
 }
 
-plus_icon.addEventListener('click', addItemsToggle)
+div_add.addEventListener('click', addItemsToggle)
 
 

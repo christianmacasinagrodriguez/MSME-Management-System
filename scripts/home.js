@@ -474,9 +474,17 @@ function menuToggle() {
 }
 
 function toggleCart() {
+    console.log('working')
     if(divRight.style.display === 'block') {
-        divRight.style.display = 'none'    
+        divRight.style.display = 'none' 
+        
     } else {
+        document.getElementById('container_home').style.display = 'block';
+        document.getElementById('container_home').style.visibility = 'visible';  
+        document.getElementById('container_manage').style.display = 'none';
+        document.getElementById('container_manage').style.visibility = 'hidden';
+        document.getElementById('container_media').style.display = 'none';
+        document.getElementById('container_media').style.visibility = 'hidden';
         divRight.style.display = 'block'
     }
 }
@@ -484,10 +492,10 @@ function toggleCart() {
 menuIcon.addEventListener('click', menuToggle)
 cartIcon.addEventListener('click', toggleCart)
 window.addEventListener('resize', ()=> {
-    if(innerWidth > 1230) {
-        divRight.style.display = 'block'
+    if(innerWidth > 800) {
+        divTopRight.style.display = 'flex'
     } else {
-        divRight.style.display = 'none'
+        divTopRight.style.display = 'none'
     }
 })
 
