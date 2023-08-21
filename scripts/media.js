@@ -204,6 +204,7 @@ function PopulateVideos() {
             videoTitle.id = video.blob
             videoTitle.style.margin= '5px'
             videoTitle.style.width= '90%'
+            videoTitle.className = 'video-list'
             videoTitle.addEventListener('mouseover', ()=> videoTitle.style.backgroundColor = 'var(--light-accent-color)')
             videoTitle.addEventListener('mouseleave', ()=> videoTitle.style.backgroundColor = 'var(--white-color)')
             videoTitle.addEventListener('click', function(event){
@@ -246,6 +247,7 @@ function PopulateAudios(){
             musicTitle.style.marginTop = '5px'
             musicTitle.style.margin= '5px'
             musicTitle.style.width= '90%'
+            musicTitle.className = 'audio-list'
             musicTitle.addEventListener('mouseover', ()=> musicTitle.style.backgroundColor = 'var(--light-accent-color)')
             musicTitle.addEventListener('mouseleave', ()=> musicTitle.style.backgroundColor = 'var(--white-color)')
             musicTitle.addEventListener('click', function(event){
@@ -285,6 +287,7 @@ function PopulatePhotos(){
             photoTitle.id = photo.blob
             photoTitle.style.margin= '5px'
             photoTitle.style.width= '90%'
+            photoTitle.className = 'photo-list'
             photoTitle.addEventListener('mouseover', ()=> photoTitle.style.backgroundColor = 'var(--light-accent-color)')
             photoTitle.addEventListener('mouseleave', ()=> photoTitle.style.backgroundColor = 'var(--white-color)')
         
@@ -356,15 +359,19 @@ function ToggleNextButton(){
 
        
 
-        if(document.getElementById('previous_button').style.display === 'block' && document.getElementById('next_button').style.display === 'block') {
+        if(document.getElementById('previous_button').style.display === 'flex' && document.getElementById('next_button').style.display === 'flex') {
 
             document.getElementById('previous_button').style.display = 'none'
             document.getElementById('next_button').style.display = 'none'
-            if(mediaType = 'video'){
+            video_view.setAttribute('poster', 'scripts/image.gif')
+            if(mediaType === 'video'){
                 video_view.pause()
+                
+                
 
             } else {
                 video_view.play() 
+                
 
             }
             video_view.style.display === 'none' && video_view.pause() 
@@ -373,9 +380,10 @@ function ToggleNextButton(){
         
         } else {
             
-            document.getElementById('previous_button').style.display = 'block'
-            document.getElementById('next_button').style.display = 'block'
-            if(mediaType = 'video'){
+            document.getElementById('previous_button').style.display = 'flex'
+            document.getElementById('next_button').style.display = 'flex'
+            video_view.setAttribute('poster', 'scripts/notplaying.PNG')
+            if(mediaType === 'video'){
                 video_view.play()
 
             } else {
