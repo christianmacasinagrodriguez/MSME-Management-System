@@ -79,7 +79,7 @@ function CreateBoxes(){
         let newBox = document.createElement('div')
         newBox.id = product.id
         newBox.tabIndex = '-1'
-        newBox.style.width = '14rem';
+        newBox.style.width = 'clam(10rem, 14rem, 14rem)';
         newBox.style.height = '20rem';
         newBox.style.backgroundColor = 'var(--white-color)';
         newBox.style.borderRadius = '10px';
