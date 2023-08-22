@@ -134,6 +134,9 @@ select {
     padding: 1rem;
     margin-top: 10%;
 }
+.google-svg {
+    cursor: pointer;
+}
 
 a:visited {
     color: var(--normal-accent-color);

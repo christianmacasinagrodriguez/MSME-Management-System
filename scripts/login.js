@@ -1,11 +1,14 @@
+import { signinWithGoogle, AddUser as addFirebaseUser, AuthenticateUser } from '../scripts/firebase.js'
 
 //login
 let input_login_username = document.getElementById('input_login_username')
 let input_login_password = document.getElementById('input_login_password')
 let input_login_loginButton = document.getElementById('input_login_loginButton')
+let google_svg = document.querySelector('.google-svg')
 
 //signup
 let input_signup_username = document.getElementById('input_signup_username')
+let input_signup_email = document.getElementById('input_signup_email')
 let input_signup_firstname = document.getElementById('input_signup_firstname')
 let input_signup_lastname = document.getElementById('input_signup_lastname')
 let input_signup_password = document.getElementById('input_signup_password')
@@ -128,7 +131,18 @@ class User {
     }
 }
 
-function Toggle(number) {
+export function ShowPassword(id){
+    let el = document.getElementById(`${id}`)
+
+    if(el.type === 'password'){
+        el.type = 'text'
+    } else {
+        el.type = 'password'
+    }     
+    
+}
+
+export function Toggle(number) {
     if(number === 0){
         document.getElementById('form_login_forgotpassform').style.display = 'block'
         document.getElementById('form_login_sform').style.display = 'none'
@@ -181,8 +195,9 @@ function ErrorMessageLogin(message) {
 }
 
 async function AddUser(){
-    let newUser = new User(input_signup_username.value, input_signup_firstname.value, input_signup_lastname.value, input_signup_password.value, input_signup_confirmPassword.value, signup_security_questions.value, input_signup_securityAnswer.value, input_signup_mobileNumber.value)
-    console.log(Users)
+    let newUser = new User(input_signup_username.value, input_signup_email.value,input_signup_firstname.value, input_signup_lastname.value, input_signup_password.value, input_signup_confirmPassword.value, signup_security_questions.value, input_signup_securityAnswer.value, input_signup_mobileNumber.value)
+
+    addFirebaseUser(input_signup_username.value, input_signup_email.value,input_signup_firstname.value, input_signup_lastname.value, input_signup_password.value, input_signup_confirmPassword.value, signup_security_questions.value, input_signup_securityAnswer.value, input_signup_mobileNumber.value)
     Users.push(newUser)
     SaveData()
     await SuccessMessageLogin('added User')
@@ -208,16 +223,7 @@ function RetrieveData() {
     
 }
 
-function ShowPassword(id){
-    let el = document.getElementById(`${id}`)
 
-    if(el.type === 'password'){
-        el.type = 'text'
-    } else {
-        el.type = 'password'
-    }     
-    
-}
 function checkUser() {
     if(Dummy.username === input_login_username.value && Dummy.password === input_login_password.value) {
         localStorage.setItem('loggedUser', input_login_username.value)
@@ -238,17 +244,21 @@ async function CheckLogin(){
         await ErrorMessageLogin('login. Input your Username and Password')
 
     } else {
+        
         let check = false
-        for(let user in Users){
-            if(Users[user].username === input_login_username.value && Users[user].password === input_login_password.value) {
-                check = true
-                break
+        // for(let user in Users){
+        //     if(Users[user].username === input_login_username.value && Users[user].password === input_login_password.value) {
+        //         check = true
+        //         break
 
-            } else {   
-                check = false
+        //     } else {   
+        //         check = false
                 
-            }
-        }
+        //     }
+        // }
+       
+        check = await AuthenticateUser(input_login_username.value.trim(), input_login_password.value.trim())
+        console.log(check)
 
         if(check){
             localStorage.setItem('loggedUser', input_login_username.value)
@@ -285,6 +295,8 @@ async function CheckSignup(){
         if(input_signup_username.value.trim() === '' || input_signup_firstname.value.trim() === '' ||  input_signup_lastname.value.trim() === '' ||  input_signup_password.value.trim() === '' ||  input_signup_confirmPassword.value.trim() === '' ||  signup_security_questions.value.trim() === '' ||  input_signup_securityAnswer.value.trim() === '' ||  input_signup_mobileNumber.value.trim() === ''){
             input_signup_username.style.border = '3px solid red';
             input_signup_username.onkeyup = RemoveBorder;
+            input_signup_email.style.border = '3px solid red';
+            input_signup_email.onkeyup = RemoveBorder;
             input_signup_firstname.style.border = '3px solid red';
             input_signup_firstname.onkeyup = RemoveBorder;  
             input_signup_lastname.style.border = '3px solid red'; 
@@ -362,3 +374,4 @@ input_signup_signupButton.onclick = CheckSignup
 input_login_loginButton.onclick = checkUser
 input_forgotPassword_forgotButton.onclick = 
 ChangePassword
+google_svg.onclick = signinWithGoogle
